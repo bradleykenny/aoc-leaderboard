@@ -8,7 +8,7 @@ function App() {
 			<Router>
 				<Switch>
 					<Route path="/home">
-						<div></div>
+						<div>Hello</div>
 					</Route>
 					<Route path="/profile/:username">
 						<div></div>
