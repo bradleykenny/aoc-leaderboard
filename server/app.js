@@ -1,8 +1,10 @@
-const express = require("express");
-const cors = require("cors");
+import express from "express";
+import cors from "cors";
 
-let bodyParser = require("body-parser");
+import bodyParser from "body-parser";
 const app = express();
+
+import { aocRouter } from "./controllers/adventofcode.js";
 
 // App configuration
 app.use(cors());
@@ -13,6 +15,8 @@ app.use(
 );
 app.use(bodyParser.json());
 app.use(express.static("../client/build"));
+
+app.use(aocRouter);
 
 app.set("port", process.env.PORT || 5000);
 
