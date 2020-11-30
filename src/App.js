@@ -1,6 +1,11 @@
 import "./App.css";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Redirect,
+} from "react-router-dom";
 
 function App() {
 	return (
@@ -12,6 +17,11 @@ function App() {
 					</Route>
 					<Route path="/profile/:username">
 						<div></div>
+					</Route>
+
+					{/* ALWAYS LEAVE `/` LAST */}
+					<Route path="/">
+						<Redirect to="/home" />
 					</Route>
 				</Switch>
 			</Router>
